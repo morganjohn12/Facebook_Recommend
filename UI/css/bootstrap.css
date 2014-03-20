@@ -4834,10 +4834,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 
 
-/*Control your nav bar from here 3peaks*/
+/*Control your nav bar from here 3peaks dark fb blue: 3b5999*/
 .navbar-inverse {
-  background-color: #0B8DCD; /* nav bar background color */
-  height: 240px;
+  background-color: #3b5999; /* nav bar background color  eeeff4 */
+  height: 540px;
   opacity: .90;
   border-color: #080808; 
 }
