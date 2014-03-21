@@ -521,7 +521,8 @@ cite {
 }
 
 .text-muted {
-  color: #999999;
+  color: #FFFFFF;
+  margin-left:8%;
 }
 
 .text-primary {
@@ -4837,7 +4838,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 /*Control your nav bar from here 3peaks dark fb blue: 3b5999*/
 .navbar-inverse {
   background-color: #3b5999; /* nav bar background color  eeeff4 */
-  height: 540px;
+  height: 400px;
   opacity: .90;
   border-color: #080808; 
 }
@@ -5810,12 +5811,13 @@ a.list-group-item.active:focus .list-group-item-text {
   color: inherit;
 }
 
-.panel-footer {
+.panel-footer { /*the footer*/
   padding: 10px 15px;
-  background-color: #f5f5f5;
+  background-color: #3b5999;
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+  margin-top: 80px;
 }
 
 .panel-group .panel {
