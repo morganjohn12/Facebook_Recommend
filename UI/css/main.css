@@ -40,13 +40,14 @@ input {
 .submit input{
   color: #fff;
   background: #2ab573;
-  width: 150px;
+  width: 250px;
   height: 45px;
   border: none;
   font-family: "HelveticaNeue-Light", Arial, sans-serif;
    font-size: 18px;
    color: white;
    margin-top: 15px;
+   margin-left: 400px;
 }
 .form input {
   background: #585858 ;

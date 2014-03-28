@@ -4842,6 +4842,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   opacity: .90;
   border-color: #080808; 
 }
+.profile-navbar-inverse {
+  background-color: #3b5999; /* nav bar background color  eeeff4 */
+  height: 60px;
+  opacity: .90;
+  border-color: #080808; 
+}
 
 
 
