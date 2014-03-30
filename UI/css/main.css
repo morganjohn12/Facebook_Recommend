@@ -85,3 +85,19 @@
 /*******************************************************************
 *************** Login Like Explore section
 *******************************************************************/
+.selector_box {
+	background:#FFFFFF;
+	width:325px;
+	height: 300px;
+	/*top right bottom left*/
+   padding: 30px 75px 10px 75px;
+   margin-top:80px;
+}
+.h3_body1{
+   font-size: 35px;
+   color: #FFFFFF;
+   display: inline-block;
+   background-color:#3b5999;
+   padding: 10px 100px 10px 100px;
+   margin-left: -100px;
+}
