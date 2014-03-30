@@ -46,12 +46,17 @@ public class calculate extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		/*********************************************************************************
+		 * Queries
+		 *********************************************************************************/
 		// Multiple FQL
 		Map<String, String> queries = new HashMap<String, String>();
-		//queries.put("all friends", "SELECT uid2 FROM friend WHERE uid1=me()");
-		queries.put("my name", "SELECT name,music FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() LIMIT 500)");
+		queries.put("music", "SELECT name,music FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() LIMIT 500) AND CONTAINS('musician/band')");
+		queries.put("movies", "SELECT name,movies FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() LIMIT 500)");
+		queries.put("tv", "SELECT name,tv FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() LIMIT 500)");
+		//queries.put("current_location", "SELECT name,current_location FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() LIMIT 500)");
+		//queries.put("favorite_teams", "SELECT name,favorite_teams FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() LIMIT 500)");
 		Map<String, JSONArray> result = null;
-		
 		
 		try {
 			result = facebook.executeMultiFQL(queries);
@@ -60,10 +65,14 @@ public class calculate extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		// Map
-		HashMap<String, Integer> h = new HashMap<String, Integer>();
 		
-		JSONArray allFriendsJSONArray = result.get("my name");
+		/*********************************************************************************
+		 * Music
+		 *********************************************************************************/
+		// Map
+		HashMap<String, Integer> m = new HashMap<String, Integer>();
+		
+		JSONArray allFriendsJSONArray = result.get("music");
 		for (int i = 0; i < allFriendsJSONArray.length(); i++)
 		{
 		    JSONObject jsonObject = null;
@@ -76,23 +85,20 @@ public class calculate extends HttpServlet {
 				
 				if (music[0] != null && music[0].length() != 0)
 				{
-					System.out.println("\nNAME: " + jsonObject.get("name"));
-					System.out.println(music.length);
+					//System.out.println("\nNAME: " + jsonObject.get("name"));
+					//System.out.println(music.length);
 				
 					for (int j = 0; j < music.length; j++)
 					{
 						music[j] = music[j].trim();
-						System.out.println(music[j]);
-						if (h.get(music[j]) != null)
-							h.put(music[j], (h.get(music[j]) + 1));
+						//System.out.println(music[j]);
+						if (m.get(music[j]) != null)
+							m.put(music[j], (m.get(music[j]) + 1));
 						else
-							h.put(music[j], 1);
+							m.put(music[j], 1);
 					}
 				}
-				
-				//h.put("z", h.get("z")+1);
 								
-				
 			} catch (JSONException e) 
 			{
 				// TODO Auto-generated catch block
@@ -101,7 +107,7 @@ public class calculate extends HttpServlet {
 		}
 		
 		// Sort Map
-		List<Map.Entry> a = new ArrayList<Map.Entry>(h.entrySet());
+		List<Map.Entry> a = new ArrayList<Map.Entry>(m.entrySet());
 		Collections.sort(a,
 		         new Comparator() {
 		             public int compare(Object o1, Object o2) {
@@ -111,14 +117,137 @@ public class calculate extends HttpServlet {
 		             }
 		         });
 		
-		for (int k = 0; k < a.size(); k++)
-			System.out.println(a.get(k));
+		List<Map.Entry> b = new ArrayList<Map.Entry>();
+		for (int k = 0; k < 15; k++)
+		{
+			b.add(a.get(k));
+			//System.out.println(b.get(k));
+		}
 		
+		/*********************************************************************************
+		 * Movies
+		 *********************************************************************************/
+		// Map
+		HashMap<String, Integer> v = new HashMap<String, Integer>();
+		
+		JSONArray allMoviesJSONArray = result.get("movies");
+		for (int i = 0; i < allFriendsJSONArray.length(); i++)
+		{
+		    JSONObject jsonObject = null;
+		    try 
+		    {
+				jsonObject = allMoviesJSONArray.getJSONObject(i);
+				
+				String list = (String) jsonObject.get("movies");
+				String[] movies = list.split("[,]+");
+				
+				if (movies[0] != null && movies[0].length() != 0)
+				{
+					//System.out.println("\nNAME: " + jsonObject.get("name"));
+					//System.out.println(music.length);
+				
+					for (int j = 0; j < movies.length; j++)
+					{
+						movies[j] = movies[j].trim();
+						//System.out.println(music[j]);
+						if (v.get(movies[j]) != null)
+							v.put(movies[j], (v.get(movies[j]) + 1));
+						else
+							v.put(movies[j], 1);
+					}
+				}
+								
+			} catch (JSONException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		// Sort Map
+		List<Map.Entry> c = new ArrayList<Map.Entry>(v.entrySet());
+		Collections.sort(c,
+		         new Comparator() {
+		             public int compare(Object o1, Object o2) {
+		                 Map.Entry e1 = (Map.Entry) o1;
+		                 Map.Entry e2 = (Map.Entry) o2;
+		                 return ((Comparable) e2.getValue()).compareTo(e1.getValue());
+		             }
+		         });
+		
+		List<Map.Entry> d = new ArrayList<Map.Entry>();
+		for (int k = 0; k < 15; k++)
+		{
+			d.add(c.get(k));
+			//System.out.println(b.get(k));
+		}
+		
+		/*********************************************************************************
+		 * TV Shows
+		 *********************************************************************************/
+		// Map
+		HashMap<String, Integer> t = new HashMap<String, Integer>();
+		
+		JSONArray allTvshowsJSONArray = result.get("tv");
+		for (int i = 0; i < allFriendsJSONArray.length(); i++)
+		{
+		    JSONObject jsonObject = null;
+		    try 
+		    {
+				jsonObject = allTvshowsJSONArray.getJSONObject(i);
+				
+				String list = (String) jsonObject.get("tv");
+				String[] tv = list.split("[,]+");
+				
+				if (tv[0] != null && tv[0].length() != 0)
+				{
+					//System.out.println("\nNAME: " + jsonObject.get("name"));
+					//System.out.println(music.length);
+				
+					for (int j = 0; j < tv.length; j++)
+					{
+						tv[j] = tv[j].trim();
+						//System.out.println(music[j]);
+						if (t.get(tv[j]) != null)
+							t.put(tv[j], (t.get(tv[j]) + 1));
+						else
+							t.put(tv[j], 1);
+					}
+				}
+								
+			} catch (JSONException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		// Sort Map
+		List<Map.Entry> e = new ArrayList<Map.Entry>(t.entrySet());
+		Collections.sort(e,
+		         new Comparator() {
+		             public int compare(Object o1, Object o2) {
+		                 Map.Entry e1 = (Map.Entry) o1;
+		                 Map.Entry e2 = (Map.Entry) o2;
+		                 return ((Comparable) e2.getValue()).compareTo(e1.getValue());
+		             }
+		         });
+		
+		List<Map.Entry> f = new ArrayList<Map.Entry>();
+		for (int k = 0; k < 15; k++)
+		{
+			f.add(e.get(k));
+			//System.out.println(b.get(k));
+		}
+		
+		/**************************************************************************
+		 * Setting Data to Forward
+		 **************************************************************************/
 		// Pass the data in the map
-		request.setAttribute("map", a);
+		request.setAttribute("music", b);
+		request.setAttribute("movies", d);
+		request.setAttribute("tv", f);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
-		//ResponseList<Friend> list = facebook.getFriends();
 	}
 
 	

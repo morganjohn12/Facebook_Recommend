@@ -50,7 +50,16 @@
                       <input type="password"/> <br />
                       <a href="signin">login</a>
                       <a href="ShowFriends">Show Friends after logging in</a>
-                      ${map}
+                      
+                      <br/><br/>MUSIC: 
+                      ${music}
+                      
+                      <br/><br/>MOVIES: 
+                      ${movies}
+                      
+                      <br/><br/>TV SHOWS: 
+                      ${tv}
+                      
                   </form>
                 </li>
             </ul>
