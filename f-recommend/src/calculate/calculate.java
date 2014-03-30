@@ -59,43 +59,46 @@ public class calculate extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*
-		JSONArray allFriendsJSONArray = result.get("all friends");
-		for (int i = 0; i < allFriendsJSONArray.length(); i++) {
-		    JSONObject jsonObject = null;
-			
-		    try {
-				jsonObject = allFriendsJSONArray.getJSONObject(i);
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		 // Getting user's email address only
-			try {
-				User user = facebook.getUser((String) jsonObject.get("uid2"));
-				System.out.println(user);
-			} catch (FacebookException | JSONException e1) {
-				// TODO Auto-geneSystem.out.println(jsonObject);rated catch block
-				e1.printStackTrace();
-			}
-			
-		}*/
-		JSONArray myNameJSONArray = result.get("my name");
-		try {
-			System.out.println(myNameJSONArray.getJSONObject(0).get("name"));
-			System.out.println(myNameJSONArray.getJSONObject(0).get("music"));
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		// Map
 		HashMap<String, Integer> h = new HashMap<String, Integer>();
-		h.put("z",30);
-		h.put("z", h.get("z")+1);
-		h.put("e",10);
-		h.put("b",20);
-		h.put("c",20);
+		
+		JSONArray allFriendsJSONArray = result.get("my name");
+		for (int i = 0; i < allFriendsJSONArray.length(); i++)
+		{
+		    JSONObject jsonObject = null;
+		    try 
+		    {
+				jsonObject = allFriendsJSONArray.getJSONObject(i);
+				
+				String list = (String) jsonObject.get("music");
+				String[] music = list.split("[,]+");
+				
+				if (music[0] != null && music[0].length() != 0)
+				{
+					System.out.println("\nNAME: " + jsonObject.get("name"));
+					System.out.println(music.length);
+				
+					for (int j = 0; j < music.length; j++)
+					{
+						music[j] = music[j].trim();
+						System.out.println(music[j]);
+						if (h.get(music[j]) != null)
+							h.put(music[j], (h.get(music[j]) + 1));
+						else
+							h.put(music[j], 1);
+					}
+				}
+				
+				//h.put("z", h.get("z")+1);
+								
+				
+			} catch (JSONException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		// Sort Map
 		List<Map.Entry> a = new ArrayList<Map.Entry>(h.entrySet());
@@ -107,7 +110,11 @@ public class calculate extends HttpServlet {
 		                 return ((Comparable) e2.getValue()).compareTo(e1.getValue());
 		             }
 		         });
-
+		
+		for (int k = 0; k < a.size(); k++)
+			System.out.println(a.get(k));
+		
+		// Pass the data in the map
 		request.setAttribute("map", a);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
