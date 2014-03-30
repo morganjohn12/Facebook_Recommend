@@ -12,55 +12,43 @@
    font-family: "HelveticaNeue-Light", Arial, sans-serif;
    font-size: 18px;
    color: white;
-   margin-left:85%;
-}
-.register_h3{
-   font-family: "HelveticaNeue-Light", Arial, sans-serif;
-   font-size: 18px;
-   color: #C8C8C8 ;
-   margin-top: -10px;
 }
 .move_menu {
-  margin-top: 0px;
   float: left; 
-  margin-left: 5%;
+  margin-left: 2%;
 }
-
 .home_img {
 	margin-top: 100px;
 }
-
-
-input {
-  background: #fff;
-  width: 500px;
-  height: 35px;
-  margin-left:85%;
-}
-.submit input{
-  color: #fff;
-  background: #2ab573;
-  width: 250px;
-  height: 45px;
-  border: none;
-  font-family: "HelveticaNeue-Light", Arial, sans-serif;
-   font-size: 18px;
+#login {
+	position: fixed;
+   /*top right bottom left*/
+   padding: 10px 75px 10px 75px;
+   
+   /*top right bottom left*/
+   margin: -60px 0px 0px 450px;
+   color: #fff;
+   background: #2ab573;
+   border: none;
+   font-family: "HelveticaNeue-Light", Arial, sans-serif;
+   font-size: 28px;
    color: white;
-   margin-top: 15px;
-   margin-left: 400px;
+   text-decoration: none;
 }
-.form input {
-  background: #585858 ;
-  width: 340px;
-  height: 100px;
-  border: none;
-  font-family: "HelveticaNeue-Light", Arial, sans-serif;
-  font-size: 18px;
-  color: #C8C8C8 ;
-  padding-left: 10px;
-}
-form {
-	margin-top: -170px;
+
+.test {
+	position: fixed;
+   /*top right bottom left*/
+   padding: 10px 75px 10px 75px;
+   
+   /*top right bottom left*/
+   margin: -60px 0px 0px 450px;
+   color: #fff;
+   background: #2ab573;
+   border: none;
+   font-family: "HelveticaNeue-Light", Arial, sans-serif;
+   font-size: 28px;
+   color: white;
 }
 
 
@@ -68,31 +56,29 @@ form {
 *************** Login Like Explore section
 *******************************************************************/
 .body_content {
-	margin-top: 470px;
+	margin-top: 390px;
+	margin-left: 50px;
 	width: 60%;
 }
  .h1_body{
    font-size: 65px;
    color: #555555;
    display: inline-block;
-   margin-left: 20%;
 }
  .h1_strong{
    font-size: 65px;
    color: #3b5999;
    display: inline-block;
-   margin-left: 1%;
 }
  .h3_body{
    font-size: 35px;
    color: #555555;
    display: inline-block;
-   margin-left: 20%;
 }
 .like {
 	float: right;
 	margin-right: 10%;
-	margin-top: -18%;
+	margin-top: -210px;
 }
 
 
