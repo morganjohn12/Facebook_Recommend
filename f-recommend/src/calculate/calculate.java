@@ -19,6 +19,7 @@ import facebook4j.internal.org.json.JSONArray;
 import facebook4j.internal.org.json.JSONException;
 import facebook4j.internal.org.json.JSONObject;
 
+
 /**
  * Servlet implementation class calculate
  */
@@ -117,11 +118,14 @@ public class calculate extends HttpServlet {
 		             }
 		         });
 		
-		List<Map.Entry> b = new ArrayList<Map.Entry>();
+		// Set music list
+		ArrayList<myObject> music = new ArrayList<myObject>();
 		for (int k = 0; k < 15; k++)
 		{
-			b.add(a.get(k));
-			//System.out.println(b.get(k));
+			String key = (String)a.get(k).getKey();
+			int count = (int)a.get(k).getValue();
+			myObject item = new myObject(key, count);
+			music.add(item);			
 		}
 		
 		/*********************************************************************************
@@ -175,11 +179,14 @@ public class calculate extends HttpServlet {
 		             }
 		         });
 		
-		List<Map.Entry> d = new ArrayList<Map.Entry>();
+		// Set movie list
+		ArrayList<myObject> movies = new ArrayList<myObject>();
 		for (int k = 0; k < 15; k++)
 		{
-			d.add(c.get(k));
-			//System.out.println(b.get(k));
+			String key = (String)c.get(k).getKey();
+			int count = (int)c.get(k).getValue();
+			myObject item = new myObject(key, count);
+			movies.add(item);			
 		}
 		
 		/*********************************************************************************
@@ -233,20 +240,23 @@ public class calculate extends HttpServlet {
 		             }
 		         });
 		
-		List<Map.Entry> f = new ArrayList<Map.Entry>();
+		// Set tv list
+		ArrayList<myObject> tv = new ArrayList<myObject>();
 		for (int k = 0; k < 15; k++)
 		{
-			f.add(e.get(k));
-			//System.out.println(b.get(k));
+			String key = (String)e.get(k).getKey();
+			int count = (int)e.get(k).getValue();
+			myObject item = new myObject(key, count);
+			tv.add(item);			
 		}
 		
 		/**************************************************************************
 		 * Setting Data to Forward
 		 **************************************************************************/
 		// Pass the data in the map
-		request.setAttribute("music", b);
-		request.setAttribute("movies", d);
-		request.setAttribute("tv", f);
+		request.setAttribute("music", music);
+		request.setAttribute("movies", movies);
+		request.setAttribute("tv", tv);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -51,14 +53,26 @@
                       <a href="signin">login</a>
                       <a href="ShowFriends">Show Friends after logging in</a>
                       
-                      <br/><br/>MUSIC: 
-                      ${music}
+                      <br/><br/>MUSIC:<br/> 
+                      <c:forEach var="item" items="${music}">
+                      	${item.key}
+                      	${item.count}
+                      	<br/>                      
+                      </c:forEach>	
                       
-                      <br/><br/>MOVIES: 
-                      ${movies}
+                      <br/>MOVIES:<br/> 
+                      <c:forEach var="item" items="${movies}">
+                      	${item.key}
+                      	${item.count}
+                      	<br/>                      
+                      </c:forEach>
                       
-                      <br/><br/>TV SHOWS: 
-                      ${tv}
+                      <br/>TV SHOWS:<br/> 
+                      <c:forEach var="item" items="${tv}">
+                      	${item.key}
+                      	${item.count}
+                      	<br/>                      
+                      </c:forEach>
                       
                   </form>
                 </li>
