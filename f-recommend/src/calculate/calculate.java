@@ -257,7 +257,11 @@ public class calculate extends HttpServlet {
 		request.setAttribute("music", music);
 		request.setAttribute("movies", movies);
 		request.setAttribute("tv", tv);
+<<<<<<< HEAD
 		request.getRequestDispatcher("profile.jsp").forward(request, response);
+=======
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+>>>>>>> FETCH_HEAD
 	}
 
 	

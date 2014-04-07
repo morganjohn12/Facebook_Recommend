@@ -32,10 +32,56 @@
         <div class="navbar-header">
           <a class="navbar-brand"href="wv.html"><img src=""/></a>
         </div>
+<<<<<<< HEAD
         <div class="move_menu">
         		<img class="home_img" src="img/facebook.png"/>
          		<a id="login" href="signin">login </a>
       </div>
+=======
+        <div class="collapse navbar-collapse">
+         
+
+      <div class="move_menu">
+      	
+            <ul class="nav navbar-nav">
+        <img class="home_img" src="img/facebook.png"/>
+              <li> 
+                  <form>                      
+                      <h3 class="h3"> Email: </h3>
+                      <input type="text" name="email" />
+                      
+                      <h3 class="h3">Password:</h3> 
+                      <input type="password"/> <br />
+                      <a href="signin">login</a>
+                      <a href="ShowFriends">Show Friends after logging in</a>
+                      
+                      <br/><br/>MUSIC:<br/> 
+                      <c:forEach var="item" items="${music}">
+                      	${item.key}
+                      	${item.count}
+                      	<br/>                      
+                      </c:forEach>	
+                      
+                      <br/>MOVIES:<br/> 
+                      <c:forEach var="item" items="${movies}">
+                      	${item.key}
+                      	${item.count}
+                      	<br/>                      
+                      </c:forEach>
+                      
+                      <br/>TV SHOWS:<br/> 
+                      <c:forEach var="item" items="${tv}">
+                      	${item.key}
+                      	${item.count}
+                      	<br/>                      
+                      </c:forEach>
+                      
+                  </form>
+                </li>
+            </ul>
+          </div>
+        </div><!--/.nav-collapse -->
+>>>>>>> FETCH_HEAD
       </div>
     </div>
     </section>
