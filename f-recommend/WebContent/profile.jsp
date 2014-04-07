@@ -17,6 +17,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/show_hide.js"></script>
+    <script type="text/javascript" src="js/itunes.js"></script>
 
     <title>Profile</title>
   </head>
@@ -35,47 +36,42 @@
       </div>
      </div>
    </section>
-     <br /><br /><br /><br />
-<!--     <div class="selector_box"> -->
+   <br /><br /><br /><br />
+   <h3 class="h3_cat">Choose a catergory:</h3> <br/>
      	<h1 id="showMusic">Music</h1>
-     	<div class="alert1" > 
      		<c:forEach var="item" items="${music}">
-     			<div class="card">
-                   <h1 class="h1_like">${item.key}</h3><br />
+     			<div class="alert1" > 
+                   <h1 class="h1_like">${item.key}</h1><br />
                    <h3 class="h3_like">${item.count}</h3>
                    <img class="profile_like" src="img/like.png"/> 
-            	   <br/><br/> 
-           		</div>     
+           		</div> 
+           		<br/><br/><br/><br/>     
             </c:forEach>
-            
-        </div>
      	<br />
-     	
+     
+     <div class="moviescard">	
       <h1 id="showMovies">Movies</h1>
-     	<div class="alert2" > 
      		<c:forEach var="item" items="${movies}">
-            	<div class="card">
-                   <h1 class="h1_like">${item.key}</h3><br />
+     		    <div class="alert2" > 
+                   <h1 class="h1_like">${item.key}</h1><br />
                    <h3 class="h3_like">${item.count}</h3>
                    <img class="profile_like" src="img/like.png"/> 
-            	   <br/><br/> 
            		</div>     
-        
+           		 <br/><br/><br/><br/><br/><br/><br/><br/> 
             </c:forEach>
         </div>
      	<br />
      	
+     <div class="tvcard">	
       <h1 id="showTV">Tv Shows</h1>
-     	<div class="alert3" >
      		<c:forEach var="item" items="${tv}">
-                 <div class="card">
-                   <h1 class="h1_like">${item.key}</h3><br />
+        		<div class="alert3" >
+                   <h1 class="h1_like">${item.key}</h1><br />
                    <h3 class="h3_like">${item.count}</h3>
                    <img class="profile_like" src="img/like.png"/> 
-            	   <br/><br/> 
-           		</div>     
-          
-            </c:forEach> </div>
-     <!--</div>-->
+           		</div>
+           		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
+            </c:forEach> 
+    </div>
   </body>
 </html>
