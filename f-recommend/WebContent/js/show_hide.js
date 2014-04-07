@@ -29,6 +29,8 @@ $(document).ready(function() {
 			    function() {
 				$alert_one.hide();
 				$('#showMusic').css('color', '#555555').css('background-color', '#EBEBEB');
+				$('.moviescard').css('margin-top', -1200);
+				$('.tvcard').css('margin-top', -2400);
 				
 				content_displayed = true;
 				alert_one_shown = true;
@@ -45,7 +47,9 @@ $(document).ready(function() {
                     },
                     function() {
                         $alert_two.hide();
-						$('#showMovies').css('color', '#555555').css('background-color', '#EBEBEB');			
+						$('#showMovies').css('color', '#555555').css('background-color', '#EBEBEB');
+						$('.moviescard').css('margin-top', -1200);
+						$('.tvcard').css('margin-top', -2400);
 			content_displayed = false;
 			alert_two_shown = false;
 			
@@ -54,6 +58,8 @@ $(document).ready(function() {
 						$('.alert1').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 						$('#showMusic').css('color', '#FFFFFF').css('background-color', '#3b5999');
+						$('.moviescard').css('margin-top', -3290);
+						$('.tvcard').css('margin-top', -2400);
 						content_displayed = true;
 						alert_one_shown = true;
 		    });
@@ -68,6 +74,8 @@ $(document).ready(function() {
 			    function() {
 				$alert_three.hide();
 				$('#showTV').css('color', '#555555').css('background-color', '#EBEBEB');
+				$('.moviescard').css('margin-top', -1200);
+				$('.tvcard').css('margin-top', -2400);
 				content_displayed = false;
 				alert_three_shown = false;
 				
@@ -76,6 +84,8 @@ $(document).ready(function() {
 						$('.alert1').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 						$('#showMusic').css('color', '#FFFFFF').css('background-color', '#3b5999');
+						$('.moviescard').css('margin-top', -3290);
+						$('.tvcard').css('margin-top', -2400);
 						
 						content_displayed = true;
 						alert_one_shown = true;
@@ -90,6 +100,8 @@ $(document).ready(function() {
 			$('.alert1').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 			$('#showMusic').css('color', '#FFFFFF').css('background-color', '#3b5999');
+			$('.moviescard').css('margin-top', -3290);
+			$('.tvcard').css('margin-top', -2400);
 			content_displayed = true;
 			alert_one_shown = true;
 			
@@ -110,6 +122,7 @@ $(document).ready(function() {
 		var $alert_two = $('.alert2');
 		var $alert_three = $('.alert3');
 		
+		
             if (content_displayed == true) {
                 // On click hide the content that is currently displayed
                 
@@ -123,14 +136,17 @@ $(document).ready(function() {
 			    function() {
 				$alert_one.hide();
 				$('#showMusic').css('color', '#555555').css('background-color', '#EBEBEB');
+				$('.moviescard').css('margin-top', -1200);
+				$('.tvcard').css('margin-top', -2400);
 				content_displayed = false;
 				alert_one_shown = false;
 				
 				$alert_two.show()
 						.css("right", -($alert_two.outerWidth() + 1000)).animate({right: 0});
-						$('.alert2').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
+						$('.alert2').css('margin-top', -155).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 						$('#showMovies').css('color', '#FFFFFF').css('background-color', '#3b5999');
+						$('.tvcard').css('margin-top', -3170);
 						
 						content_displayed = true;
 						alert_two_shown = true;
@@ -146,6 +162,8 @@ $(document).ready(function() {
                     function() {
                         $alert_two.hide();
                         $('#showMovies').css('color', '#555555').css('background-color', '#EBEBEB');
+                        $('.moviescard').css('margin-top', -1200);
+        				$('.tvcard').css('margin-top', -2400);
 			
 			content_displayed = false;
 			alert_two_shown = false;
@@ -161,14 +179,17 @@ $(document).ready(function() {
 			    function() {
 				$alert_three.hide();
 				$('#showTV').css('color', '#555555').css('background-color', '#EBEBEB');
+				$('.moviescard').css('margin-top', -1200);
+				$('.tvcard').css('margin-top', -2400);
 				content_displayed = false;
 				alert_three_shown = false;
 				
 					$alert_two.show()
 						.css("right", -($alert_two.outerWidth() + 1000)).animate({right: 0});
-						$('.alert2').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
+						$('.alert2').css('margin-top', -155).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 						$('#showMovies').css('color', '#FFFFFF').css('background-color', '#3b5999');
+						$('.tvcard').css('margin-top', -3170);
 						content_displayed = true;
 						alert_two_shown = true;
 			});
@@ -179,9 +200,10 @@ $(document).ready(function() {
                 // Slide in the content
                 $alert_two.show()
 			.css("right", -($alert_two.outerWidth() + 1000)).animate({right: 0});
-			$('.alert2').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
+			$('.alert2').css('margin-top', -155).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 			$('#showMovies').css('color', '#FFFFFF').css('background-color', '#3b5999');
+			$('.tvcard').css('margin-top', -3170);
 			content_displayed = true;
 			alert_two_shown = true;
 			
@@ -213,12 +235,14 @@ $(document).ready(function() {
 			    function() {
 				$alert_one.hide();
 				$('#showMusic').css('color', '#555555').css('background-color', '#EBEBEB');
+				$('.moviescard').css('margin-top', -1200);
+				$('.tvcard').css('margin-top', -2400);
 				
 				content_displayed = false;
 				alert_one_shown = false;
 				$alert_three.show()
 						.css("right", -($alert_three.outerWidth() + 1000)).animate({right: 0});
-						$('.alert3').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
+						$('.alert3').css('margin-top', -240).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 						$('#showTV').css('color', '#FFFFFF').css('background-color', '#3b5999');
 						content_displayed = true;
@@ -235,13 +259,15 @@ $(document).ready(function() {
                     function() {
                         $alert_two.hide();
                         $('#showMovies').css('color', '#555555').css('background-color', '#EBEBEB');
+                        $('.moviescard').css('margin-top', -1200);
+        				$('.tvcard').css('margin-top', -2400);
 			
 			content_displayed = false;
 			alert_two_shown = false;
 			
 			$alert_three.show()
 						.css("right", -($alert_three.outerWidth() + 1000)).animate({right: 0});
-						$('.alert3').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
+						$('.alert3').css('margin-top', -240).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 						$('#showTV').css('color', '#FFFFFF').css('background-color', '#3b5999');
 						content_displayed = true;
@@ -258,6 +284,9 @@ $(document).ready(function() {
 			    function() {
 				$alert_three.hide();
 				$('#showTV').css('color', '#555555').css('background-color', '#EBEBEB');
+				$('.moviescard').css('margin-top', -1200);
+				$('.tvcard').css('margin-top', -2400);
+				//$('.tvcard').css('margin-top', -2400);
 				content_displayed = false;
 				alert_three_shown = false;
 			});
@@ -268,7 +297,7 @@ $(document).ready(function() {
                 // Slide in the content
             $alert_three.show()
 			.css("right", -($alert_three.outerWidth() + 1000)).animate({right: 0});
-			$('.alert3').css('margin-top', -67).css('margin-left',300).css('color', '#555555')
+			$('.alert3').css('margin-top', -240).css('margin-left',300).css('color', '#555555')
 									.css('background-color', '#EBEBEB');
 			$('#showTV').css('color', '#FFFFFF').css('background-color', '#3b5999');
 			content_displayed = true;

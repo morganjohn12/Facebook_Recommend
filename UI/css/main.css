@@ -85,6 +85,12 @@
    color: #555555;
    display: inline-block;
 }
+.h3_cat{
+   font-size: 28px;
+   color: #555555;
+   display: inline-block;
+   margin-left:10px;
+}
 .like {
 	float: right;
 	margin-right: 10%;
@@ -136,8 +142,11 @@
     margin-bottom: 30px;
 }
 
-.card { 
-    margin-top: -10px;
+.moviescard { 
+    margin-top: -1200px;
+}
+.tvcard { 
+    margin-top: -2400px;
 }
    
 .profile_like {
