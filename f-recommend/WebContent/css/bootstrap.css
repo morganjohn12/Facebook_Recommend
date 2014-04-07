@@ -4493,10 +4493,58 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   /* top, right, bottom, left */
-  padding: 40px 15px;
+  padding: 10px 15px;
   font-size: 18px;
   line-height: 20px;
 }
+.navbar-brand_search {
+  float: left;
+  /* top, right, bottom, left */
+  padding: 10px 15px 10px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  width: 340px;
+    height: 40px;
+    border: none;
+    font-family: "HelveticaNeue-Light", Arial, sans-serif;
+    font-size: 18px;
+    color: #C8C8C8 ;
+    margin-top:15px;
+    margin-left:30px;
+}
+.navbar-brand_right {
+	  float: left;
+  /* top, right, bottom, left */
+  padding: 10px 15px 10px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  width: 340px;
+    height: 40px;
+    border: none;
+    font-family: "HelveticaNeue-Light", Arial, sans-serif;
+    font-size: 18px;
+    color: #C8C8C8 ;
+    
+        margin-top:15px;
+    margin-left:50px;
+}
+a:hover {
+    	color: white;
+    	text-decoration:none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4838,13 +4886,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 /*Control your nav bar from here 3peaks dark fb blue: 3b5999*/
 .navbar-inverse {
   background-color: #3b5999; /* nav bar background color  eeeff4 */
-  height: 400px;
+  height: 350px;
   opacity: .90;
   border-color: #080808; 
 }
 .profile-navbar-inverse {
   background-color: #3b5999; /* nav bar background color  eeeff4 */
-  height: 60px;
+  height: 70px;
   opacity: .90;
   border-color: #080808; 
 }

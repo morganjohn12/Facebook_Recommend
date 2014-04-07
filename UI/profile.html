@@ -11,6 +11,9 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" />
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/show_hide.js"></script>
+
     <title>Profile</title>
   </head>
   
@@ -21,18 +24,32 @@
         <div class="navbar-header">
           <a class="navbar-brand"href="#"><img src="img/recommend_small.png"/></a>
           	<input class="navbar-brand_search" value="Search Recommendations"/>
-          	<a class="navbar-brand_right" href="#"> Log Out | User -------- </a>
         </div>
         
         <div class="collapse mavbar-collapse">
       	</div>
-      	
-     </section>
-     
-     <div class="selector_box">
-     	<a href="#music"><h1 class="h3_body1">Music</h1></a>
-     	<a href="#movies"><h1 class="h3_body">Movies</h1></a>
-     	<a href="#tv_shows"><h1 class="h3_body">Tv Shows</h1></a>
+      </div>
      </div>
+   </section>
+     <br /><br /><br /><br />
+<!--     <div class="selector_box"> -->
+     	<h1 id="showMusic">Music</h1>
+     	<div class="alert1" >
+     		<span class="recommend_card">
+     			<h1>John Mayer</h1>	
+     			
+     			<h1>50</h1>
+     			<img class="profile_like" src="img/like.png"/><br />
+     		</span>
+     	</div>
+     	<br />
+     	
+      <h1 id="showMovies">Movies</h1>
+     	<div class="alert2" > Joe Dirt </div>
+     	<br />
+     	
+      <h1 id="showTV">Tv Shows</h1>
+     	<div class="alert3" > Modern Family </div>
+     <!--</div>-->
   </body>
 </html>
