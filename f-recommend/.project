@@ -33,4 +33,41 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/css/bootstrap-theme.css</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/css/bootstrap-theme.css</locationURI>
+		</link>
+		<link>
+			<name>WebContent/css/bootstrap.css</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/css/bootstrap.css</locationURI>
+		</link>
+		<link>
+			<name>WebContent/css/holder.css</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/css/holder.css</locationURI>
+		</link>
+		<link>
+			<name>WebContent/css/main.css</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/css/main.css</locationURI>
+		</link>
+		<link>
+			<name>WebContent/img/facebook.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/img/facebook.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/img/like.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/img/like.png</locationURI>
+		</link>
+		<link>
+			<name>WebContent/img/recommend_small.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/github/Facebook_Recommend/UI/img/recommend_small.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
